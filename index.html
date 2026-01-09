@@ -69,6 +69,51 @@
                 <div class="cat-box"><img src="Images/heart.jpg" alt="Cat 6"></div>
             </div>
         </section>
+        <section id="guestbook-section" class="container">
+            <div id="app" class="section-card purple-bg">
+                <h2 class="section-header">🐾 The Meow-Guestbook</h2>
+                <p style="margin-bottom: 25px;">Tell me what you think of my paws-ome site!</p>
+
+                <form @submit.prevent="addComment" class="comment-form">
+                    <input v-model="form.name" type="text" placeholder="Your Human Name" required>
+
+                    <select v-model="form.mood" required>
+                        <option value="" disabled>What is your Cat-itude?</option>
+                        <option value="Sleepy">💤 Sleepy (Need a nap)</option>
+                        <option value="Zoomies">⚡ Zoomies (Full of energy)</option>
+                        <option value="Grumpy">😾 Grumpy (Need treats)</option>
+                        <option value="Purr-fect">😸 Purr-fect (Happy!)</option>
+                    </select>
+
+                    <div class="rating-box">
+                        <label>Rate my Gallery: </label>
+                        <input type="number" v-model.number="form.rating" min="1" max="5"> Paws 🐾
+                    </div>
+
+                    <textarea v-model="form.text" placeholder="Leave a meow-ssage..." required></textarea>
+            
+                    <button type="submit" class="btn-black submit-btn">Submit Meow-ssage</button>
+                </form>
+
+                <hr style="margin: 40px 0; border: 1px solid black; opacity: 0.3;">
+
+                <div class="comments-list">
+                    <h3 style="margin-bottom: 20px; font-family: 'Syne', sans-serif;">Wall of Meows:</h3>
+            
+                    <div v-for="(item, index) in comments" :key="index" class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-name">👤 {{ item.name }}</span>
+                            <span class="comment-mood-tag">{{ item.mood }}</span>
+                        </div>
+                        <p class="comment-body">"{{ item.text }}"</p>
+                        <div class="comment-footer">
+                            <span>{{ '🐾'.repeat(item.rating) }}</span>
+                            <small>{{ item.date }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -77,6 +122,7 @@
 
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
