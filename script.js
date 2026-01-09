@@ -36,3 +36,45 @@ catImages.forEach(image => {
         }, 100);
     });
 });
+
+// Additional requirement #13
+// --- Vue.js Guestbook Component ---
+const { createApp } = Vue;
+
+createApp({
+    data() {
+        return {
+            form: {
+                name: '',
+                mood: '',
+                rating: 5,
+                text: ''
+            },
+            comments: [] 
+        }
+    },
+    methods: {
+        addComment() {
+            // Get current time formatted
+            const now = new Date();
+            const timeString = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+            // Add new entry to the top of the list
+            this.comments.unshift({
+                ...this.form,
+                date: timeString
+            });
+
+            // Reset Form
+            this.form.name = '';
+            this.form.mood = '';
+            this.form.rating = 5;
+            this.form.text = '';
+
+            // Play laugh sound if it exists
+            if (typeof clickSound !== 'undefined') {
+                clickSound.play();
+            }
+        }
+    }
+}).mount('#app');
