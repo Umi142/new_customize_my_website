@@ -3,20 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Resources | Gutierrez</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Table styling for the Resources page */
+        .resource-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            background: var(--white);
+            color: var(--black);
+            border: 3px solid var(--black);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .resource-table th, .resource-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .resource-table th {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .resource-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body style="padding-top: 50px;">
     <div class="container section-card teal-bg">
-        <h1>Resource Credits</h1>
-        <ul style="list-style: none; margin-top: 20px; text-align: left;">
-            <li><strong>Design:</strong> Inspired by Wix Dog Walker Template (#4207)</li>
-            <li><strong>Fonts:</strong> Google Fonts (Syne & Outfit)</li>
-            <li><strong>Icons:</strong> FontAwesome v6</li>
-            <li><strong>AI Tool:</strong> Google Gemini (Query: Help design a Wix-style personal profile)</li>
-            <li><strong>Sound: laugh.mp3:</strong> YTSFX</li>
-        </ul>
-        <a href="index.html" class="btn-black" style="margin-top: 20px;">Return Home</a>
+        <h1 class="section-header">Resource Credits</h1>
+        <p>Documentation of all assets and tools used in this project.</p>
+
+        <table class="resource-table">
+            <thead>
+                <tr>
+                    <th>Resource Name</th>
+                    <th>Purpose</th>
+                    <th>Source Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Vue.js v3</strong></td>
+                    <td>Meow-Guestbook & Survey Logic</td>
+                    <td><a href="https://unpkg.com/vue@3/dist/vue.global.js" target="_blank">Vue CDN</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Wix Template #4207</strong></td>
+                    <td>Visual Design Inspiration</td>
+                    <td><a href="https://www.wix.com/website/templates" target="_blank">Wix Templates</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Fonts</strong></td>
+                    <td>Typography (Syne & Outfit)</td>
+                    <td><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></td>
+                </tr>
+                <tr>
+                    <td><strong>FontAwesome v6</strong></td>
+                    <td>UI Icons & Navigation</td>
+                    <td><a href="https://fontawesome.com/" target="_blank">FontAwesome</a></td>
+                </tr>
+                <tr>
+                    <td><strong>laugh.mp3</strong></td>
+                    <td>Interactive Gallery Sound</td>
+                    <td><a href="https://youtu.be/GTXUWhmjCog?si=x_A8d9KQ5RI3grv_" target="_blank">YTSFX</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Gemini</strong></td>
+                    <td>AI Code Structure & Logic</td>
+                    <td><a href="https://gemini.google.com" target="_blank">AI Assistant</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn-black">Return Home</a>
+        </div>
     </div>
 </body>
 </html>
