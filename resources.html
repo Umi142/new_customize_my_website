@@ -79,7 +79,466 @@
                     <td><a href="https://gemini.google.com" target="_blank">AI Assistant</a></td>
                 </tr>
             </tbody>
-        </table>
+        </table> <div style="margin-top: 30px; text-align: left; background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; border: 3px solid var(--black);">
+            <h3 style="font-family: 'Syne', sans-serif; font-size: 1.3rem; text-transform: uppercase;">✔️ Validation & Technical Notes</h3>
+            
+            <p style="margin: 15px 0; font-size: 0.95rem; line-height: 1.4;">
+                <strong>HTML Validator:</strong> The errors/warnings regarding attributes like <code>@submit.prevent</code>, <code>v-model</code>, and <code>:key</code> are caused by the <strong>Vue.js (Requirement #13)</strong> framework. These are custom directives necessary for the Guestbook's interactivity and are recognized by modern browsers, though they fall outside the static HTML5 W3C specification.
+            </p>
+            
+            <p style="margin-bottom: 10px; font-size: 0.95rem;">
+                <strong>CSS Validator:</strong> The stylesheet is fully compliant with CSS3 standards. You can copy the code below for direct input validation:
+            </p>
+            
+            <details>
+                <summary style="cursor: pointer; font-weight: bold; background: var(--black); color: var(--white); padding: 10px 20px; display: inline-block; border-radius: 50px; font-size: 0.8rem;">VIEW CSS CODE FOR VALIDATOR</summary>
+                <textarea readonly style="width: 100%; height: 200px; margin-top: 15px; font-family: monospace; font-size: 12px; padding: 15px; border: 2px solid var(--black); border-radius: 10px; background: #f9f9f9;">
+            * Color Palette */
+            :root {
+                --lime: #D6FF38;
+                --purple: #AF83FF;
+                --teal: #00EDD0;
+                --black: #000000;
+                --white: #ffffff;
+            }
+
+            /* Reset & Global Styles */
+            * { 
+                margin: 0; 
+                padding: 0; 
+                box-sizing: border-box; 
+                scroll-behavior: smooth; 
+            }
+
+            body { 
+                font-family: 'Outfit', sans-serif; 
+                background: var(--white); 
+                overflow-x: hidden; 
+            }
+
+            /* Navigation with Sticky Lime Bar */
+            nav { 
+                background: var(--lime); 
+                padding: 20px; 
+                position: sticky; 
+                top: 0; 
+                z-index: 1000; 
+                border-bottom: 3px solid var(--black); 
+            }
+
+            .nav-container { 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+                max-width: 1200px; 
+                margin: 0 auto; 
+            }
+
+            .logo { 
+                font-family: 'Syne', sans-serif; 
+                font-weight: 800; 
+                font-size: 1.5rem; 
+                color: var(--black); 
+                text-decoration: none; 
+            }
+
+            .nav-links { 
+                list-style: none; 
+                display: flex; 
+            }
+
+            .nav-links li a { 
+                text-decoration: none; 
+                color: var(--black); 
+                font-weight: 600; 
+                margin-left: 20px; 
+                transition: 0.3s;
+            }
+
+            .nav-links li a:hover {
+                opacity: 0.7;
+            }
+
+            /* Hero Section with Overlapping Image */
+            .hero { 
+                background: var(--purple); 
+                padding: 80px 20px 180px; 
+                text-align: center; 
+                position: relative; 
+            }
+
+            .hero h1 { 
+                font-family: 'Syne', sans-serif; 
+                font-size: clamp(3rem, 10vw, 7rem); 
+                line-height: 0.85; 
+                margin-bottom: 20px; 
+            }
+
+            .hero p { 
+                font-size: 1.2rem; 
+                max-width: 600px; 
+                margin: 0 auto 30px; 
+            }
+
+            .btn-black { 
+                background: var(--black); 
+                color: var(--white); 
+                padding: 15px 40px; 
+                border-radius: 50px; 
+                text-decoration: none; 
+                font-weight: 700; 
+                display: inline-block; 
+                transition: transform 0.3s;
+            }
+
+            .btn-black:hover {
+                transform: scale(1.05);
+            }
+
+            .overlap-img { 
+                position: absolute; 
+                bottom: -100px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+                width: 280px; 
+                z-index: 10; 
+            }
+
+            .overlap-img img { 
+                width: 100%; 
+                border-radius: 20px; 
+                border: 3px solid var(--black); 
+                box-shadow: 10px 10px 0 var(--black); 
+            }
+
+            /* Ticker Animation */
+            .ticker-wrap { 
+                background: var(--teal); 
+                padding: 15px 0; 
+                border-top: 3px solid var(--black); 
+                border-bottom: 3px solid var(--black); 
+                overflow: hidden; 
+                margin-top: 100px; 
+            }
+
+            .ticker { 
+                display: flex; 
+                white-space: nowrap; 
+                animation: moveTicker 15s linear infinite; 
+                font-family: 'Syne', sans-serif; 
+                font-weight: 800; 
+                font-size: 1.5rem; 
+            }
+
+            @keyframes moveTicker { 
+                from { transform: translateX(0); } 
+                to { transform: translateX(-50%); } 
+            }
+
+            /* Sections & Grid Layout */
+            .container { 
+                max-width: 1100px; 
+                margin: 0 auto; 
+                padding: 0 20px; 
+            }
+
+            section {
+                margin-top: 100px; 
+                margin-bottom: 50px;
+            }
+
+            #about {
+                margin-top: 140px; 
+            }
+
+            #gallery {
+                margin-top: 120px; 
+                padding-top: 20px;
+            }
+
+            .section-header {
+                margin-bottom: 40px; 
+                font-family: 'Syne', sans-serif;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+            }
+
+            .section-card { 
+                padding: 50px; 
+                border-radius: 30px; 
+                border: 3px solid var(--black); 
+                margin-bottom: 50px; 
+                text-align: center; 
+            }
+
+            /* Color Backgrounds */
+            .lime-bg { background: var(--lime); }
+            .purple-bg { background: var(--purple); }
+            .teal-bg { background: var(--teal); }
+            .black-bg { background: var(--black); color: var(--white); }
+
+            /* Experience Grid */
+            .grid-layout { 
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+                gap: 20px; 
+                margin-top: 20px; 
+            }
+
+            .card { 
+                padding: 30px; 
+                border-radius: 20px; 
+                border: 3px solid var(--black); 
+                text-align: center; 
+                transition: transform 0.3s;
+            }
+
+            .card:hover {
+                transform: translateY(-10px);
+            }
+
+            .card i { 
+                font-size: 3rem; 
+                margin-bottom: 10px; 
+            }
+
+            /* Cat Gallery Grid */
+            .cat-grid { 
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                gap: 20px; 
+                margin-top: 40px; 
+            }
+
+            .cat-box img { 
+                width: 100%; 
+                height: 350px; 
+                object-fit: cover; 
+                border-radius: 20px; 
+                border: 3px solid var(--black); 
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .cat-box img:hover {
+                transform: scale(1.05);
+                box-shadow: 15px 15px 0 var(--teal);
+                cursor: pointer;
+            }
+
+
+            .cat-box {
+                position: relative;
+                cursor: pointer;
+            }
+
+            /* Small floating hint in the corner */
+            .cat-box::after {
+                content: "🔊 Play Sound"; 
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(214, 255, 56, 0.9); /* Semi-transparent Wix Lime */
+                color: var(--black);
+                padding: 5px 10px;
+                font-family: 'Outfit', sans-serif;
+                font-size: 0.75rem;
+                font-weight: 700;
+                border: 1px solid var(--black);
+                border-radius: 5px;
+                opacity: 0; /* Hidden by default */
+                transition: opacity 0.3s ease;
+                z-index: 5;
+                pointer-events: none;
+            }
+
+            /* Reveal only on hover */
+            .cat-box:hover::after {
+                opacity: 1;
+            }
+
+            /* Subtle image effect instead of a dark filter */
+            .cat-box:hover img {
+                transform: scale(1.02);
+                box-shadow: 5px 5px 0 var(--teal);
+            }
+
+            /* Back to Top Button */
+            #backToTop { 
+                position: fixed; 
+                bottom: 20px; 
+                right: 20px; 
+                background: var(--black); 
+                color: white; 
+                border: none; 
+                padding: 15px; 
+                border-radius: 50%; 
+                cursor: pointer; 
+                display: none; 
+                z-index: 100; 
+                transition: 0.3s;
+            }
+
+            #backToTop:hover {
+                background: var(--purple);
+            }
+
+            /* Mobile Responsiveness */
+            @media (max-width: 768px) {
+                .nav-links { display: none; }
+                .hero h1 { font-size: 3.5rem; }
+                .cat-grid { grid-template-columns: 1fr; }
+            }
+
+
+            /* Additional requirement #13 */
+            /* --- Guestbook Form Layout --- */
+            .comment-form {
+                display: flex;
+                flex-direction: column;
+                gap: 25px; 
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .submit-btn {
+                margin-top: 10px; 
+                padding: 18px !important;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .submit-btn:hover {
+                background: var(--teal);
+                color: var(--black);
+                transform: translateY(-3px);
+            }
+
+            .rating-box {
+                text-align: left;
+                font-weight: 700;
+                font-family: 'Outfit', sans-serif;
+            }
+
+            /* --- Message Output Cards --- */
+            .comment-item {
+                background: var(--white);
+                color: var(--black);
+                border: 3px solid var(--black);
+                padding: 25px;
+                border-radius: 20px;
+                margin-bottom: 25px;
+                text-align: left;
+                box-shadow: 10px 10px 0 var(--black);
+            }
+
+            .comment-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid var(--lime);
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+
+            .comment-name {
+                font-weight: 800;
+                font-family: 'Syne', sans-serif;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+            }
+
+            .comment-mood-tag {
+                background: var(--teal);
+                padding: 5px 15px;
+                border: 2px solid var(--black);
+                border-radius: 50px;
+                font-size: 0.75rem;
+                font-weight: 800;
+            }
+
+            .comment-body {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .comment-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+            }
+
+            .paws-rating {
+                letter-spacing: 3px;
+                font-size: 1.2rem;
+            }
+
+            /* --- MOBILE RESPONSIVE OVERRIDES --- */
+            @media screen and (max-width: 768px) {
+                /* 1. Fix Nav Buttons (The Shortcut Buttons) */
+                .nav-container {
+                    flex-direction: column; /* Stacks logo and menu */
+                    gap: 15px;
+                }
+
+                .nav-links { 
+                    display: flex !important; /* Re-enable hidden menu for mobile */
+                    flex-wrap: wrap; 
+                    justify-content: center;
+                    gap: 10px;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .nav-links li a {
+                    margin: 0;
+                    padding: 8px 15px;
+                    font-size: 0.85rem;
+                    background: var(--black); /* Makes shortcuts look like buttons */
+                    color: var(--white);
+                    border-radius: 8px;
+                }
+
+                /* 2. Fix Layout & Spacing */
+                .container {
+                    width: 95% !important;
+                }
+
+                .section-card {
+                    padding: 20px !important;
+                    margin: 20px auto !important;
+                    width: 100% !important;
+                    box-shadow: 8px 8px 0 var(--black) !important; 
+                }
+
+                /* 3. Fix Text Overflows */
+                h1, .section-header {
+                    font-size: 1.8rem !important;
+                    word-wrap: break-word; /* Prevents text bleeding off screen */
+                }
+
+                /* 4. Fix Gallery (Stack cats vertically) */
+                .cat-grid {
+                    grid-template-columns: 1fr !important;
+                }
+
+                /* 5. Fix Guestbook Form */
+                .comment-form {
+                    max-width: 100%;
+                    gap: 15px;
+                }
+                
+                .comment-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 5px;
+                }
+            }
+                </textarea>
+            </details>
+        </div>
 
         <div style="margin-top: 30px;">
             <a href="index.html" class="btn-black">Return Home</a>
